@@ -19,3 +19,4 @@ console.log(process.env.DB_NAME);
 
 console.log('yeah');
 
+module.exports = db
