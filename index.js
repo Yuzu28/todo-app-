@@ -9,6 +9,7 @@ const server = http.createServer((req, res) => {
         .then((data) => {
                     console.log('here is the data:');
                     console.log(data);
+                    res.end(JSON.stringify(data));
                 })
     console.log("++++++++++++++++++++++++++++++++++++++")
     console.log(allTodos);
