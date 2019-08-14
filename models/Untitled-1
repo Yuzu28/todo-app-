@@ -8,3 +8,11 @@ The filename:
 The node module
 dotenv
 
+
+SQL        Crud       HTTP Verbs
+
+Insert -> Create -> POST
+Select -> Retrieve -> GET
+Updates -> Updates -> PATCH (PUT)
+Delete -> Delete -> DELETE
+                    REST(REpresentational State Transfer)  stuff above
