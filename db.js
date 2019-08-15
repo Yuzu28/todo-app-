@@ -4,7 +4,7 @@ require('dotenv').config();
 
 
 const pgp = require('pg-promise')({
-    //logs SQL Queries to the console
+    //logs SQL Queries to the
     query: (e) => console.log(e.query)
 
 });
