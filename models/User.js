@@ -27,7 +27,8 @@ async function getOne(id){
     `, [user.id]);
 
         
-        user.todos - todosForUser;
+        user.todos = todosForUser;
+        console.log(todosForUser);
         return user;
     } catch(error){
         console.log('there was an error')
@@ -77,6 +78,25 @@ async function createUser({ displayname, username } ){
     console.log(newUserInfo)
     return newUserInfo ;
 }
+async function createToDo({priority, task, status}){
+
+    console.log("You have work to do");
+        const taskForUser = await db.one(`
+        insert into todos
+            (priority, task, status)
+        values($1, $2, $3)
+        returning id
+            
+        `,[priority, task, status]);
+        
+        console.log(taskForUser);
+    
+        return taskForUser;
+    }
+
+
+
+
 
 // createUser({
 //     displayname: "Randomahahah",
@@ -86,6 +106,7 @@ async function createUser({ displayname, username } ){
 module.exports = {
     getAll,
     getOne,
-    createUser
+    createUser,
+    createToDo
 
 };
